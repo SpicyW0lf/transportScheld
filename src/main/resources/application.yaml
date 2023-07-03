@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddlAuto: create-drop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/transp
+    username: postgres
+    password: 12314
+    driverClassName: org.postgresql.Driver
