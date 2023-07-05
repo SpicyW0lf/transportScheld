@@ -3,9 +3,13 @@ spring:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddlAuto: create-drop
+      ddlAuto:
   datasource:
     url: jdbc:postgresql://localhost:5432/transp
     username: postgres
     password: 12314
     driverClassName: org.postgresql.Driver
+jwt:
+  secret: dimon
+  expiration: 604800
+  header: Authorization
