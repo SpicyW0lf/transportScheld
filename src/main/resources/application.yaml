@@ -2,14 +2,25 @@ spring:
   jpa:
     database: POSTGRESQL
     show-sql: true
-    hibernate:
-      ddlAuto:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   datasource:
     url: jdbc:postgresql://localhost:5432/transp
     username: postgres
     password: 12314
     driverClassName: org.postgresql.Driver
+  flyway:
+    user: postgres
+    password: 12314
+    schemas: public
+    url: jdbc:postgresql://localhost:5432/transp
+    locations: db/migration
 jwt:
   secret: dimon
-  expiration: 604800
+  expiration: 30m
   header: Authorization
+
+server:
+  port: 8189
+

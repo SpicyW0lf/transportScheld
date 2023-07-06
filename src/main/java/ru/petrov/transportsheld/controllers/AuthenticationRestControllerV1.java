@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.petrov.transportsheld.dto.AuthenticationRequestDto;
 import ru.petrov.transportsheld.entities.User;
 import ru.petrov.transportsheld.repositories.UserRepository;
-import ru.petrov.transportsheld.security.JwtTokenProvider;
 
-import javax.naming.AuthenticationException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,8 +42,7 @@ public class AuthenticationRestControllerV1 {
             response.put("token", token);
 
             return ResponseEntity.ok(response);
-
-        } catch (AuthenticationException e) {
+        } catch (Exception e) {
             return new ResponseEntity<>("Invalid email/password combination", HttpStatus.FORBIDDEN);
         }
     }
