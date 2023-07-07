@@ -28,6 +28,15 @@ public class JwtService {
         return generateToken(new HashMap<>(), userDetails);
     }
 
+    public boolean isTokenValid(String token, UserDetails userDetails) {
+        final String username = getEmail(token);
+        return (username.equals(userDetails.getUsername())) && !isTokenExpired(token);
+    }
+
+    private boolean isTokenExpired(String token) {
+        return getClaims(token).getExpiration().before(new Date());
+    }
+
     public String generateToken(
             Map<String, Object> extraClaims,
             UserDetails userDetails

@@ -17,7 +17,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/transp
     locations: db/migration
 jwt:
-  secret: dimon
+  secret: OX3b++ss/dsrmUpfptFdSYMoNsLt+ZCadS5JqADuxH4ba1gjiQ2EmEPEDzcpRwUF
   expiration: 30m
   header: Authorization
 
